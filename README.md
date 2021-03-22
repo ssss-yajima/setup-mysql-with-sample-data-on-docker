@@ -1,4 +1,6 @@
-# Set up MySQL with sample data on docker
+# Setup MySQL with sample data on docker
+
+Setup MySQL on docker and import official sample data. 
 
 ## SetUp MySQL Container
 
@@ -14,11 +16,13 @@
 [MySQL :: Other MySQL Documentation](https://dev.mysql.com/doc/index-other.html)
 2. Copy downloaded file to the container:  
 `docker cp test_db-1.0.7.tar.gz mysql_docker:./`
-3. Unzip sample data:  
+3. Attach to the container:  
+`docker exec -it mysql_docker bash`
+4. Unzip sample data:  
 `tar -zxvf test_db-1.0.7.tar.gz`
-4. Move to unzipped folder.  
+5. Move to unzipped folder.  
 `cd test_db`
-5. Import sample data to MySQL.  
+6. Import sample data to MySQL.  
 `mysql -u root -p < employee.sql`
 
 ## Connect from VSCode SQLTools extention
